@@ -1,0 +1,4 @@
+/*crea el package*/
+npm init --yes
+/*instala dependencias*/
+npm i express ejs mysql body-parser
