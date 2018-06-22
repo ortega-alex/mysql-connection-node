@@ -4,6 +4,7 @@ module.exports = () => {
 	return mysql.createConnection({
 		host:'localhost',
 		user:'root',
-		password:'nanita'
+		password:'nanita',
+		database:'NEWS_PORTAL_NODEJS'
 	});
 }

@@ -9,21 +9,20 @@ module.exports = app => {
     		console.error('error connecting: ' + err.stack);
     		return;
   		}
-
   	    console.log('connected as id ' + connection.threadId);
 	});
 
 	app.get('/',( req, res) => {
-		connection.query('SELECT * FROM NEWS' , () => (err , result ) =>{
+		connection.query('SELECT * FROM NEWS' , (err , result ) =>{
 			res.render('news/news' , {
 				news : result
-			});			
+			});								
 		});	
 	});
 
 	app.post('/news' , (req , res) => {
 		const { title , news } = req.body;
-		connection.query('INSERT INTO NEWS SER?' , {
+		connection.query('INSERT INTO NEWS SET?' , {
 			title,
 			news
 		} , (err , result) => {
